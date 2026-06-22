@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Data & Automation Work</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f8f7f4;
+    --surface: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #5a5a5a;
+    --text-muted: #9a9a9a;
+    --border: #e4e2dd;
+    --accent-bi: #1a56a0;
+    --accent-bi-bg: #eaf1fb;
+    --accent-bi-text: #1a56a0;
+    --accent-auto: #0f6e56;
+    --accent-auto-bg: #e1f5ee;
+    --accent-auto-text: #0f6e56;
+    --rule: #d8d5cf;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  .page {
+    max-width: 740px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .site-header {
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .site-header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 0.4rem;
+  }
+
+  .site-header .subtitle {
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+  /* Cards */
+  .project {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .project-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
+  }
+
+  .icon-bi { background: var(--accent-bi-bg); color: var(--accent-bi); }
+  .icon-auto { background: var(--accent-auto-bg); color: var(--accent-auto); }
+
+  .project-meta { flex: 1; }
+
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 2px 9px;
+    border-radius: 20px;
+    margin-bottom: 6px;
+  }
+
+  .badge-bi { background: var(--accent-bi-bg); color: var(--accent-bi-text); }
+  .badge-auto { background: var(--accent-auto-bg); color: var(--accent-auto-text); }
+
+  .project-title {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+    margin-bottom: 3px;
+  }
+
+  .project-role {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 1.25rem 0;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+  }
+
+  .project-body {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Stats row */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin-bottom: 1.25rem;
+  }
+
+  .stat-box {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 1px;
+  }
+
+  /* Feature list */
+  .feature-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .feature-list li {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    padding: 5px 0;
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .feature-list li:last-child { border-bottom: none; }
+
+  .check {
+    color: var(--accent-bi);
+    font-weight: 700;
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .check-auto { color: var(--accent-auto); }
+
+  /* Impact callout */
+  .impact {
+    background: var(--bg);
+    border-left: 3px solid var(--rule);
+    border-radius: 0 6px 6px 0;
+    padding: 0.85rem 1rem;
+    margin: 1.25rem 0;
+  }
+
+  .impact p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  /* Tech pills */
+  .tech-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 1rem;
+  }
+
+  .pill {
+    font-size: 12px;
+    color: var(--text-secondary);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 3px 11px;
+  }
+
+  /* Footer */
+  .site-footer {
+    margin-top: 3rem;
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 540px) {
+    body { padding: 2rem 1rem 4rem; }
+    .project { padding: 1.25rem; }
+    .project-header { flex-direction: column; gap: 0.75rem; }
+    .site-header h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="site-header">
+    <p class="eyebrow">Work portfolio</p>
+    <h1>Data & automation projects</h1>
+    <p class="subtitle">IT Operational Analyst · Michigan Department of Treasury</p>
+  </header>
+
+  <!-- Project 1: Power BI -->
+  <article class="project">
+    <div class="project-header">
+      <div class="project-icon icon-bi">&#9642;</div>
+      <div class="project-meta">
+        <span class="badge badge-bi">Power BI</span>
+        <h2 class="project-title">Vendor ticket tracking dashboard</h2>
+        <p class="project-role">Executive-facing reporting &middot; Data visualization &middot; Time intelligence</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <p class="section-label">Overview</p>
+    <p class="project-body">Built an executive-facing Power BI dashboard giving leadership real-time visibility into vendor ticket performance. The dashboard answers a single critical question at a glance: is the support backlog growing or shrinking? It is reviewed monthly by leadership to evaluate vendor output, prioritize outstanding items, and ensure high-priority tickets are being resolved on schedule.</p>
+
+    <hr class="divider">
+
+    <p class="section-label">Technical features</p>
+    <ul class="feature-list">
+      <li><span class="check">&#10003;</span> KPI cards for tickets opened, closed, and outstanding — month-over-month change calculated using DAX time intelligence functions</li>
+      <li><span class="check">&#10003;</span> Conditional formatting with directional arrow icons for instant visual status without manual interpretation</li>
+      <li><span class="check">&#10003;</span> Dual line chart tracking open vs. closed volume over time to surface trends across reporting periods</li>
+      <li><span class="check">&#10003;</span> Bar chart showing aging of open tickets by days-open buckets (0–30, 30–60, 60–90+ days) to flag stalled items</li>
+      <li><span class="check">&#10003;</span> Date slicer connected to a dedicated date table for month-level filtering with correct time intelligence behavior</li>
+    </ul>
+
+    <div class="impact">
+      <p>The aging chart and conditional formatting were specifically designed so leadership can identify vendor performance problems in seconds — without needing to query source data or interpret raw numbers.</p>
+    </div>
+
+    <hr class="divider">
+
+    <p class="section-label">Tools & skills</p>
+    <div class="tech-row">
+      <span class="pill">Power BI Desktop</span>
+      <span class="pill">DAX</span>
+      <span class="pill">Time intelligence</span>
+      <span class="pill">Conditional formatting</span>
+      <span class="pill">Data modeling</span>
+      <span class="pill">Date tables</span>
+      <span class="pill">Executive reporting</span>
+    </div>
+  </article>
+
+  <!-- Project 2: Power Automate -->
+  <article class="project">
+    <div class="project-header">
+      <div class="project-icon icon-auto">&#9651;</div>
+      <div class="project-meta">
+        <span class="badge badge-auto">Power Automate</span>
+        <h2 class="project-title">Issue intake & triage automation</h2>
+        <p class="project-role">Workflow automation &middot; Form design &middot; Structured data capture</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <p class="section-label">Overview</p>
+    <p class="project-body">Designed and built a full end-to-end intake and routing workflow used daily by subject matter experts to report system defects during an active vendor-led implementation. Submissions are automatically processed, routed, and logged — feeding a structured weekly triage meeting attended by agency and vendor leadership to determine whether each issue becomes a formal vendor ticket.</p>
+
+    <hr class="divider">
+
+    <p class="section-label">Usage</p>
+    <div class="stats-row">
+      <div class="stat-box">
+        <span class="stat-number">~20</span>
+        <p class="stat-label">Active SME users</p>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">600+</span>
+        <p class="stat-label">Submissions processed</p>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">8 mo.</span>
+        <p class="stat-label">In active production use</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <p class="section-label">Technical features</p>
+    <ul class="feature-list">
+      <li><span class="check check-auto">&#10003;</span> Microsoft Form capturing problem description, business and customer impact, affected account volume, issue category, severity level, and file attachments</li>
+      <li><span class="check check-auto">&#10003;</span> Automated confirmation email sent to submitter on receipt — no manual acknowledgment needed</li>
+      <li><span class="check check-auto">&#10003;</span> Category-based routing logic directs each submission to the correct shared mailbox based on issue type selected</li>
+      <li><span class="check check-auto">&#10003;</span> Conditional escalation path: Critical-severity submissions trigger separate management alerts automatically</li>
+      <li><span class="check check-auto">&#10003;</span> All submission data written to a structured Excel table with dropdown validation lists for assignment (name, manager) and generated email prompts via column concatenation</li>
+      <li><span class="check check-auto">&#10003;</span> Screenshot attachment location extracted from submission and stored as a reference link in the Excel record</li>
+    </ul>
+
+    <div class="impact">
+      <p>The workflow eliminated manual intake steps and ensures every submission is captured, routed correctly, and available for triage review — with all context (screenshots, severity, impact) immediately accessible to the people making decisions.</p>
+    </div>
+
+    <hr class="divider">
+
+    <p class="section-label">Tools & skills</p>
+    <div class="tech-row">
+      <span class="pill">Power Automate</span>
+      <span class="pill">Microsoft Forms</span>
+      <span class="pill">Excel (structured tables)</span>
+      <span class="pill">Conditional logic</span>
+      <span class="pill">Email routing</span>
+      <span class="pill">Data validation</span>
+      <span class="pill">Workflow design</span>
+      <span class="pill">SharePoint file handling</span>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <p>Portfolio updated 2026 &middot; Michigan Department of Treasury</p>
+  </footer>
+
+</div>
+</body>
+</html>
