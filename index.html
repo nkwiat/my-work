@@ -68,6 +68,15 @@
     color: var(--text-secondary);
   }
 
+  .bio {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+
   /* Cards */
   .project {
     background: var(--surface);
@@ -265,6 +274,7 @@
     <p class="eyebrow">Work portfolio</p>
     <h1>Data & automation projects</h1>
     <p class="subtitle">Data Analyst · Workflow Automation · Business Intelligence</p>
+    <p class="bio">Data and operations analyst with a background in criminal intelligence and government data systems. I specialize in building automated workflows and analytical tools that surface what's actually happening in the data — whether that's tracking anomalies and outliers, ensuring compliance integrity, or exposing patterns that don't fit. I'm drawn to problems that reward digging: finding what's off, closing gaps, and making the picture clearer.</p>
   </header>
 
   <!-- Project 1: Power BI -->
@@ -274,14 +284,14 @@
       <div class="project-meta">
         <span class="badge badge-bi">Power BI</span>
         <h2 class="project-title">Vendor ticket tracking dashboard</h2>
-        <p class="project-role">Executive-facing reporting &middot; Data visualization &middot; Time intelligence</p>
+        <p class="project-role">Anomaly detection &middot; Trend analysis &middot; Executive-facing reporting</p>
       </div>
     </div>
 
     <hr class="divider">
 
     <p class="section-label">Overview</p>
-    <p class="project-body">Built an executive-facing Power BI dashboard giving leadership real-time visibility into vendor ticket performance. The dashboard answers a single critical question at a glance: is the support backlog growing or shrinking? It is reviewed monthly by leadership to evaluate vendor output, prioritize outstanding items, and ensure high-priority tickets are being resolved on schedule.</p>
+    <p class="project-body">Built an executive-facing Power BI dashboard designed to surface anomalies and deviations in vendor ticket activity over time. The core analytical question: does the data reflect expected behavior, or is something not adding up? Month-over-month trend analysis, aging breakdowns, and conditional indicators make it immediately clear when volume patterns shift or items stall beyond expected thresholds. Reviewed monthly by leadership to identify outliers and hold activity to documented commitments.</p>
 
     <hr class="divider">
 
@@ -295,7 +305,7 @@
     </ul>
 
     <div class="impact">
-      <p>The aging chart and conditional formatting were specifically designed so leadership can identify vendor performance problems in seconds — without needing to query source data or interpret raw numbers.</p>
+      <p>The aging buckets and directional indicators were built specifically to flag when activity falls outside expected patterns — turning a raw ticket log into a tool for spotting what doesn't fit.</p>
     </div>
 
     <hr class="divider">
@@ -326,7 +336,7 @@
     <hr class="divider">
 
     <p class="section-label">Overview</p>
-    <p class="project-body">Designed and built a full end-to-end intake and routing workflow used daily by subject matter experts to report system defects during an active vendor-led implementation. Submissions are automatically processed, routed, and logged — feeding a structured weekly triage meeting attended by agency and vendor leadership to determine whether each issue becomes a formal vendor ticket.</p>
+    <p class="project-body">Designed and built an end-to-end structured data capture and routing workflow for logging system defects during an active vendor-led implementation. Beyond automating intake, the system ensures every reported issue is categorized, severity-flagged, and preserved with full context — creating a reliable, auditable record of problems as they emerge. That data feeds a weekly triage meeting where patterns across submissions inform decisions about escalation and vendor accountability.</p>
 
     <hr class="divider">
 
@@ -359,7 +369,7 @@
     </ul>
 
     <div class="impact">
-      <p>The workflow eliminated manual intake steps and ensures every submission is captured, routed correctly, and available for triage review — with all context (screenshots, severity, impact) immediately accessible to the people making decisions.</p>
+      <p>Structured, consistent data capture across 600+ submissions means the record is searchable and comparable over time — making it possible to spot recurring issue types, volume spikes, or categories that disproportionately affect customers, which is where the more interesting analytical questions start.</p>
     </div>
 
     <hr class="divider">
@@ -391,7 +401,7 @@
     <hr class="divider">
 
     <p class="section-label">Overview</p>
-    <p class="project-body">Redesigned a manual monthly reporting process that required approximately four hours of hand-keyed data entry across multiple Excel sheets into a largely automated pipeline. The original process was not only time-consuming but carried significant risk of human error in data that feeds a government compliance report. The new solution reduced the monthly workload to roughly ten minutes while eliminating the error-prone manual transfer step entirely.</p>
+    <p class="project-body">Rebuilt a manual monthly compliance reporting process as an automated data pipeline. The original method — hand-keying values across multiple spreadsheet sections — introduced compounding error risk into data submitted directly to a government system for regulatory reporting. Automating the transformation and validation steps removed that risk at the source, ensuring the numbers entering the compliance record reflect the actual data rather than what someone transcribed.</p>
 
     <hr class="divider">
 
@@ -423,7 +433,7 @@
     </ul>
 
     <div class="impact">
-      <p>The previous process relied on manual data entry into a spreadsheet used directly for government compliance reporting — making accuracy critical. Automating the transformation and calculation steps removed the primary source of error risk and freed up significant recurring time each month.</p>
+      <p>When data feeds a government compliance system, the integrity of that data matters beyond efficiency. The validation step — checking automated output against previously submitted records — was specifically designed to confirm the pipeline wasn't introducing new errors before it replaced the manual process entirely.</p>
     </div>
 
     <hr class="divider">
