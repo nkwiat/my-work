@@ -250,6 +250,54 @@
     padding: 3px 11px;
   }
 
+  /* Coursework */
+  .coursework {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+
+  .coursework .section-label {
+    margin-bottom: 1rem;
+  }
+
+  .course-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .course-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 3px;
+  }
+
+  .course-meta {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .course-link {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent-bi);
+    text-decoration: none;
+    white-space: nowrap;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 4px 12px;
+  }
+
+  .course-link:hover {
+    background: var(--accent-bi-bg);
+  }
+
   /* Footer */
   .site-footer {
     margin-top: 3rem;
@@ -450,6 +498,17 @@
       <span class="pill">Compliance reporting</span>
     </div>
   </article>
+
+  <section class="coursework">
+    <p class="section-label">Coursework & continuing education</p>
+    <div class="course-row">
+      <div class="course-info">
+        <p class="course-title">IBM Data Science Professional Certificate</p>
+        <p class="course-meta">Coursera &middot; SQL, Python, web scraping, exploratory data analysis, geospatial visualization</p>
+      </div>
+      <a href="https://github.com/nkwiat/DS_Capstone" class="course-link" target="_blank">View on GitHub &rarr;</a>
+    </div>
+  </section>
 
   <footer class="site-footer">
     <p>Portfolio updated 2026</p>
