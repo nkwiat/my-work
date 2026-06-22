@@ -20,6 +20,9 @@
     --accent-auto: #0f6e56;
     --accent-auto-bg: #e1f5ee;
     --accent-auto-text: #0f6e56;
+    --accent-pq: #854f0b;
+    --accent-pq-bg: #faeeda;
+    --accent-pq-text: #854f0b;
     --rule: #d8d5cf;
   }
 
@@ -201,7 +204,9 @@
     margin-top: 2px;
   }
 
-  .check-auto { color: var(--accent-auto); }
+  .badge-pq { background: var(--accent-pq-bg); color: var(--accent-pq-text); }
+  .icon-pq { background: var(--accent-pq-bg); color: var(--accent-pq); }
+  .check-pq { color: var(--accent-pq); }
 
   /* Impact callout */
   .impact {
@@ -369,6 +374,70 @@
       <span class="pill">Data validation</span>
       <span class="pill">Workflow design</span>
       <span class="pill">SharePoint file handling</span>
+    </div>
+  </article>
+
+  <!-- Project 3: Power Query -->
+  <article class="project">
+    <div class="project-header">
+      <div class="project-icon icon-pq">&#9670;</div>
+      <div class="project-meta">
+        <span class="badge badge-pq">Power Query &amp; Excel</span>
+        <h2 class="project-title">Automated data cleansing & reporting pipeline</h2>
+        <p class="project-role">ETL / data transformation &middot; Process automation &middot; Compliance reporting</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <p class="section-label">Overview</p>
+    <p class="project-body">Redesigned a manual monthly reporting process that required approximately four hours of hand-keyed data entry across multiple Excel sheets into a largely automated pipeline. The original process was not only time-consuming but carried significant risk of human error in data that feeds a government compliance report. The new solution reduced the monthly workload to roughly ten minutes while eliminating the error-prone manual transfer step entirely.</p>
+
+    <hr class="divider">
+
+    <p class="section-label">Impact</p>
+    <div class="stats-row">
+      <div class="stat-box">
+        <span class="stat-number">4 hrs</span>
+        <p class="stat-label">Monthly time before</p>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">~10 min</span>
+        <p class="stat-label">Monthly time after</p>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">&gt;95%</span>
+        <p class="stat-label">Time reduction</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <p class="section-label">Technical features</p>
+    <ul class="feature-list">
+      <li><span class="check check-pq">&#10003;</span> Power Query pipeline ingests the raw third-party downloaded report and performs all cleansing and transformation steps automatically on refresh</li>
+      <li><span class="check check-pq">&#10003;</span> Unit conversion logic identifies records from Canadian provinces and converts values from liters to gallons as part of the transform step</li>
+      <li><span class="check check-pq">&#10003;</span> Pivot table groups, sums, and categorizes the cleaned output — replacing manual formula-based calculations across multiple sheets</li>
+      <li><span class="check check-pq">&#10003;</span> Output validated against previously submitted data to confirm correctness before deployment</li>
+      <li><span class="check check-pq">&#10003;</span> Job aide created with screenshots and exported Power Query M code from the advanced editor — providing a reference for maintenance and a recovery path if the source report structure changes</li>
+    </ul>
+
+    <div class="impact">
+      <p>The previous process relied on manual data entry into a spreadsheet used directly for government compliance reporting — making accuracy critical. Automating the transformation and calculation steps removed the primary source of error risk and freed up significant recurring time each month.</p>
+    </div>
+
+    <hr class="divider">
+
+    <p class="section-label">Tools & skills</p>
+    <div class="tech-row">
+      <span class="pill">Power Query</span>
+      <span class="pill">Power Query M code</span>
+      <span class="pill">Excel pivot tables</span>
+      <span class="pill">ETL / data transformation</span>
+      <span class="pill">Unit conversion logic</span>
+      <span class="pill">Data validation</span>
+      <span class="pill">Process documentation</span>
+      <span class="pill">Compliance reporting</span>
     </div>
   </article>
 
